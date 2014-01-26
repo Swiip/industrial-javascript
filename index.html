@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Industrial JavaScript - Swiip</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/blood.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<section>
+					<h1>Industrial JavaScript</h1>
+
+					<aside class="notes">
+						- Bringing JavaScript development to enterprise
+						- Especially big enterprises
+						- Massive workflows
+					</aside>
+
+					<aside class="hide">
+						Hello everyone. I'm going to talk to you today about bringing JavaScript development in enterprise. Especially in big enterprises which have massive industrial workflows.
+					</aside>
+				</section>
+
+				<section>
+					<h2>
+						<a href="https://twitter.com/Swiip" style="color: white;">
+							<img src="img/Twitter_logo_blue.png" style="height: 80px; vertical-align: middle; border: none; box-shadow: none; background-color: transparent;" />
+							<img src="img/swiip.jpg" style="vertical-align: middle;" />
+							@Swiip
+						</a>
+					</h2>
+					<img src="img/logo-zenika.jpg" height="200" />
+					<img src="img/lyonjs.png" height="200" style="background-color: white;" />
+
+					<aside class="notes">
+						- Litle word about myself
+						- Matthieu Lux from Lyon
+						- Zenika, an IT service company specialized in Java
+						- I also run the Lyon JavaScript meetup
+					</aside>
+
+					<aside class="hide">
+						First off all, a little word about myself. I don't usually talk to much about myself but today I wanted to start with a little personal story. So, I'm Matthieu Lux from Lyon. I work at Zenika which an IT service company specialized in Java and I also run the Lyon JavaScript meetup.
+					</aside>
+				</section>
+
+				<section>
+					<h3>I'm invloved in both Java and JavaScript communities</h3>	
+					<div class="js"><div>JAVA</div></div>
+					<img src="img/JavaScriptLogo.png" height="300"/>
+
+					<aside class="notes">
+						- Mix up the two languages
+						- Involved in both communities
+						- Java developer in a Web conference could be hard
+						- Web community has a bad image of Java developers
+					</aside>
+
+					<aside class="hide">
+						As you can see, I mix up the two langages and the two communities. I'm involved in both Java and JavaScript communities. To be honest, being a Java developer in a Web conference could be hard. The Web community as such a bad image for Java developers.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Java ?</h2>
+					<img src="img/coming_out.jpg" />
+					<h3>Yes, I "still" do Java<br> and I "still" enjoy it!</h3>
+
+					<aside class="notes">
+						- Still enjoy doing Java
+						- Not here to compare
+						- There is some good in Java and its ecosystem
+					</aside>
+
+					<aside class="hide">
+						But today, I choose to make my coming out. I'm a Java developer and I still enjoying doing Java. Or most of it. I'm not trying to compare here Java and JavaScript, I'm just saying that there is some good in Java and his ecosystem.
+					</aside>
+				</section>
+
+				<!--<section>
+					<h3>Worse, I do<br> Java "Enterprise Edition"</h3>
+					<img src="img/java-evil-edition.jpg" />
+					<h4>But with Spring... Sun and Oracle can go to Hell!</h4>
+
+					<aside class="notes">
+						I even do Java Enterprise Edition or Evil Edition for some people. The enterprise, industrial hard way to do Java. My point today, is to find some bridges betweens this two worlds to end up working together.
+					</aside>
+				</section>-->
+
+				<section>
+					<h3>I ended up working in<br>"big companies"</h3>
+
+					<aside class="notes">
+						- Leads to end up working in "big Java only companies"
+					</aside>
+
+					<aside class="hide">
+						Being a Java developer leads me to end up working in "big Java only companies".
+					</aside>
+				</section>
+
+				<section>
+					<h3>In this "big companies"...</h3>
+					<table>
+						<tr>
+							<td style="text-align: center;"><h4>Java<br>developer</h4></td>
+							<td style="text-align: center;"><h4>JavaScript<br>developer</h4></td>
+						</tr>
+						<tr>
+							<td><img src="img/business-man-resume.jpg" height="300" /></td>
+							<td><img src="img/hipster.jpg" height="300" /><td>
+						</tr>
+					</table>
+
+					<aside class="notes">
+						- Put the context
+						- Situation is different from a Web conference
+						- JavaScript developer is seen as a dangerous hipster
+						- Java developer is seen as a succesful businessman
+					</aside>
+
+					<aside class="hide">
+						To put the context of these companies, the situation is quite different than in a Web conference. It's the JavaScript developer which is seen as a dangerous hipster.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Being a developer in one of these companies...</h3>
+
+					<aside class="notes">
+						- Being a developer is hard
+						- Powerfuls managers
+						- Respected senior architects
+						- Developers are only soldiers
+					</aside>
+
+					<aside class="hide">
+						In fact, just being a developer is hard. You know, you have the powerfuls managers and big respected senior architects, but developers are only laborer...
+					</aside>
+				</section>
+
+				<section>
+					<h3>Thinkpad forever</h3>
+					<img src="img/Encadre22709.jpg" />
+					<h4>1 GB Ram, Win XP (no kidding) Thinkpad</h4>
+
+					<aside class="notes">
+						- Hardware is awful
+						- Revered the Thinkpad
+						- Same computer to everyone
+						- From the secretary to the top manager
+					</aside>
+
+					<aside class="hide">
+						My favorite thing is the hardware, they revered the Thinkpad. They still can't understand that developers needs a minimum of tools. They just give to every one the same computer to everyone with a maximum of antivirus and crypted harddrive and consider the developer has to be happy with it.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Internet Explorer</h3>
+					<img src="img/article_IE_logo_o.JPG" />
+
+					<aside class="notes">
+						- Kingdom of old Internet Explorers
+						- IT department security politics
+						- Official browser
+					</aside>
+
+					<aside class="hide">
+						You also got Internet Explorer. Big companies are the kingdom of olds Internet Explorer. The IT departments politics are always about only Internet Explorer, you know, for security!
+					</aside>
+				</section>
+
+				<section>
+					<h3>Chosing a new piece of software...</h3>
+					<ul>
+						<li>They have to spend money</li>
+						<li>One solution to rules them all</li>
+					</ul>
+
+					<aside class="notes">
+						- Workflow is really corrupted
+						- Absolutly spend money
+						- They wan to aquire the technology
+						- They want the solution be used in every single project
+					</aside>
+
+					<aside class="hide">
+						A very difficult topic is that the workflow to choose a new piece of software is really corrupted. They absolutly want to spend money to be reassured. That's of course not a great start to choose Open Source. The worse is that as they spent money, they want the solution to be used by everyone and everywhere in the company. We all know that any solution can fit for every single project of a big company.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Industrial Workflows</h3>
+					<img src="img/arrow-diagram.gif" />
+
+					<aside class="notes">
+						- Industrial Workflows
+						- A diagram like this one in every conference room
+						- To sum it up, processes are really complex
+						- The goal is to be able to fit in
+					</aside>
+
+					<aside class="hide">
+						And finaly, there is the Industrial Workflow. I actualy worked in a company where there had a diagram like this one in every single meeting rooms. All the processes in this companies are huge and be able to fit in is a key of the success.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Selling the Web Platform<br> to these "big companies"<br> is not an easy task</h3>
+					<img src="img/wplogo_transparent_xlg.png" style="background-color: white;" />
+
+					<aside class="notes">
+						- Sell Web UI and JavaScript is not easy
+					</aside>
+
+					<aside class="hide">
+						You can imagine know that triying to sell Web UI and JavaScript development in these companies is not an easy task.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/Dead-End.jpg" />
+
+					<aside class="notes">
+						- Hipster technology
+						- Companies workflow
+						- Leads to a dead end
+					</aside>
+
+					<aside class="hide">
+						It's often ending here because Hipster technology not fitting in the companies workflow does not go very far.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/Raising-Hope.jpg" />
+
+					<aside class="notes">
+						- Theres is hope
+						- Also a great show by the way
+					</aside>
+
+					<aside class="hide">
+						But there's hope! (And it's also a great show by the way)
+					</aside>
+				</section>
+
+				<section>
+					<h3>The situation has evolved</h3>
+					<img src="img/ie6nomore-logo.jpg" />
+					<br>
+					<img src="img/Adobe_freaking_amazing_logo.jpeg" height="100" style="vertical-align: middle;" />
+					drops
+					<img src="img/apacheflex_fc-1.jpg" height="100" style="vertical-align: middle;" />
+					<br>
+					<img src="img/dezeen_Google-logo_1sq.jpg" height="100" style="vertical-align: middle;" />
+					drops
+					<img src="img/gwt-logo.png" height="100" style="vertical-align: middle;" />
+
+					<aside class="notes">
+						- Context has evolved
+						- I6 is finally dead
+						- There will still be old IE
+						- At least IE 8 can do a little of HTML 5
+						- Key concurents has been droped
+						- Projects still exists as OS project
+						- No more support is like death sentence
+					</aside>
+
+					<aside class="hide">
+						First off all, the context has evolved. IE6 is finally dead. Or at least, I didn't seen it for a while and I really hope to never see it again. Flex and GWT which was the most commonly used alternatives was both dropped. Even if both projects still exists as Open Source projects, the drop of support is death sentence from the view of a big company.
+					</aside>
+				</section>
+
+				<section>
+					<h3>The magic Keyword has landed</h3>
+					<img src="img/html5-logo-1.jpg" />
+
+					<aside class="notes">
+						- Magic keyword is appeared
+						- Transform an hipster technology
+						- Trendy and shiny thing
+					</aside>
+
+					<aside class="hide">
+						And the magic Keyword has appeared. Keywords are great to sell software to big companies, they can transform a technology from a geeky unstable one to a trendy shiny thing. And it's exactly what the HTML 5 keyword do for the Web Platform.
+					</aside>
+				</section>
+
+				<section>
+					<h3>JavaScript ecosystem has evolved</h3>
+					<img src="img/JavaScript_Tools_Library_Frameworks.jpg"/>
+
+					<aside class="notes">
+						- I'm here for that today
+						- The JavaScript development has greatly evolved
+						- New tools, new frameworks
+						- Wich allows to comply with heady workflows
+					</aside>
+
+					<aside class="hide">
+						But most of all, and I'm here for that today, the JavaScript ecosystem has greatly evolved.
+					</aside>
+				</section>
+
+				<section>
+					<h3>First you have to enter</h3>
+					<img src="img/doorway.jpg" />
+
+					<aside class="notes">
+						First of all, you have open the doors of the industrial world.
+					</aside>
+				</section>
+
+				<section>
+					<h3>AngularJS</h3>
+					<img src="img/angularjs.jpg" />
+
+					<aside class="notes">
+						And for that, you've got Angular. As perhaps somebody knows, I'm a huge fan of Angular.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Whether you like AngularJS or not, it's the key to bring JavaScript development in big companies</h3>
+
+					<aside class="notes">
+						But I will not talk about why I prefer Angular over any other JS MVC framework but why Angular is really good to enter big companies.
+					</aside>
+				</section>
+
+				<section>
+					<h3>The following views are NOT my owns!</h3>
+
+					<aside class="notes">
+						To be clear, these points are not good developers arguments. And they are not mines. But they are those which works in enterprises.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Supported by Google</h3>
+					<img src="img/angularjs.png" style="background-color: white;" />
+
+					<aside class="notes">
+						First, the "by Google" power. As I said before, big companies are looking for support. If they can't pay for support, at least, Angular is supported by a big company which gives references.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Full stack framework</h3>
+					<img src="img/juggling-monkey.jpg" />
+
+					<aside class="notes">
+						Angular is a full stack framework. They are afraid of the so called jungle of JavaScript frameworks. And they hope to simplify that jungle by choosing a single framework to make everything. It's an utopy but it still works pretty well as an argument.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Dependency Injection</h3>
+					<ul>
+						<li>Structure</li>
+						<li>Modularity</li>
+						<li>Testability</li>
+					</ul>
+					<br><br>
+					<h4>Match with Java EE concepts<br>Spring & EJB</h4>
+
+					<aside class="notes">
+						This one at least is a real argument. Angular has dependency injection. It provides structure, modularity and testability which is great features and also reassuring for Java developers which handles theses concepts for a while now.
+					</aside>
+				</section>
+
+				<section>
+					<h3>But once inside, it's only the beggining</h3>
+
+					<aside class="notes">
+						Well. At this point, we're in, but everything remains to be done.
+					</aside>
+				</section>
+
+				<section>
+					<h3>They never invest in design...</h3>
+
+					<aside class="notes">
+						These big companies, when they start a new internal project they don't invest a thing in design. Which leads to let the design to Java trainee which is usually a disaster.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/bootstrap.png" />
+
+					<aside class="notes">
+						But now, we've got Bootstrap. It's not perfect, and of course, every applications looks the same, but at least, Web applications looks clean and it changes the way of seeing webapps.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Bring Java developer to (real) JavaScript development isn't easy, but...</h3>
+
+					<aside class="notes">
+						The second element is to bring Java developers to do real JavaScript development. As JavaScript is not object, weak typed and very permissive langage, Java developers struggle with it. But there again, there is tools.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/jshintjslint.jpg" />
+
+					<aside class="notes">
+						There is many solutions with different approach, you just have to choose yours. But you have to plug it into your IDE to be able to have good feedbacks while you develop.
+					</aside>
+				</section>
+
+				<section>
+					<h3>We've got also Dependency management</h3>
+
+					<aside class="notes">
+						Java developers are used to dependency management. And know, JavaScript has it's own.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/bower.jpg" />
+
+					<aside class="notes">
+						It's called Bower. It's pretty simple and useful, it uses Git to download the dependencies directly from GitHub.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/grunt-logo.png" height="200" style="background-color: white;" />
+					<h2>
+						<img src="img/gulp.png" height="200" style="background-color: white; margin: 0 20px 0 120px; vertical-align: middle;" />
+						Build
+						<img src="img/brunch-logo-napkin.png" height="200" style="background-color: white; margin: 0 20px; vertical-align: middle;" />
+					</h2>
+					<img src="img/jake.png" height="100" />
+
+					<aside class="notes">
+						But the most important revolution of the JavaScript industrialisation is the build systems. There is few of them even if the leader for know is Grunt.
+					</aside>
+				</section>
+
+				<section>
+					<h3 style="text-decoration: line-through;">"JavaScript is not compiled,<br> it doesn't need to be built"</h3>
+
+					<aside class="notes">
+						The big error which was made for too long is to think that the Web doesn't need to be build.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Grunt</h3>
+					<img src="img/grunt-logo.png" />
+
+					<aside class="notes">
+						Let's talk some more about Grunt. Yes, it has a great logo!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Web optimization</h2>
+					<h3>No one should any more copy his source files on a Web server</h3>
+					<img src="img/automate.jpg" />
+
+					<aside class="notes">
+						The first usage of Grunt is for Web optimizations. There is so much operations you have to perform today to pass from your source files to your a production version of your website.
+					</aside>
+				</section>
+
+				<section>
+					<h2>Web Deployement<br>in 2014 =</h2>
+					<h3>
+						Verifications (JsHint) +<br>
+						Preprocessors (Sass, Coffee...) +<br>
+						Minifications (Uglify) +<br>
+						Image Optim (Imagemin...) +<br>
+						Concatenations (concat) +<br>
+						Cache Buster (rev) +<br>
+						...
+					</h3>
+
+					<aside class="notes">
+						In 2014, your build process should look like this. There is no way you could still considering deploying a web app with a simple copy.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Grunt can "watch" your files and recompile everithing</h3>
+
+					<aside class="notes">
+						One of it's great features is to be able to watch your files and then run every task you want when it sees a change.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Welcome preprocessors!</h3>
+					<h3>for CSS...</h3>
+					<img src="img/sass-less-stylus.jpg" />
+
+					<aside class="notes">
+						It's open the doors of all Web preprocessors. Preprocessors are a big enhancement for Web development. The most commonly used preporcessors are for CSS with Sass Less or Stylus. It's almost a must have nowadays.
+					</aside>
+				</section>
+
+				<section>
+					<h3>JavaScript...</h3>
+					<img src="img/coffeescript_logo.png" height="200" />
+					<img src="img/typescript-logo-426x188.jpg" height="200" />
+					<img src="img/es6.png" height="200" />
+
+					<aside class="notes">
+						But you can now also consider JavaScript preporcessors like CoffeeScript, TypeScript. You can even try ECMA Script 6 with the Traceur compiler from Google.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Even HTML!</h3>
+					<img src="img/Haml_1-5_logo.png" height="200" />
+					<img src="img/jade.png" height="200" />
+
+					<aside class="notes">
+						Finaly, you can also process you HTML to handles simpler and more meaningful HTML files.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Too much Grunt configuration?</h3>
+
+					<aside class="notes">
+						For those who are afraid of the amount of Grunt configuration, and I'm one of them...
+					</aside>
+				</section>
+
+				<section>
+					<h3>There is a solution too, he's called Yeoman</h3>
+					<img src="img/yeoman-logo.png" />
+
+					<aside class="notes">
+						There is, once again, a solution. Yeoman is a scaffolding solution which will initiate your project with a very complete Gruntfile.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Grunt will also run your tests!</h3>
+					<img src="img/unit-test.jpg" />
+
+					<aside class="notes">	
+						Grunt will also be able to run your tests.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Unit Testing JavaScript?</h3>
+					<h2>YES!</h2>
+
+					<aside class="notes">
+						Yes, there is very good testing in JavaScript now. The most commonly used framework is called Jasmine.
+					</aside>
+				</section>
+
+				<section>
+					<h3>With Jasmine</h3>
+					<img src="img/JASMINE.jpg" height="500" />
+
+					<aside class="notes">
+						Oops, not this one.
+					</aside>
+				</section>
+
+				<section>
+					<h3>No, this one</h3>
+					<img src="img/jasmine-logo.png" />
+
+					<aside class="notes">
+						Yes, this one.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Or with the one from<br> the Node.js community</h3>
+					<img src="img/mocha.png" />
+
+					<aside class="notes">
+						But it's not my prefered one. I really enjoy Mocha which is the test framework built by the Node.js community which also works for the Web. It has a particularity, it does nothing. It provides only the tests structure and allows external modules to do the rest.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/chai-logo.png" />
+					<img src="img/chai.png" />
+
+					<aside class="notes">
+						Like the assertions which are handled, for example, by Chai JS which allows to make very beautiful assertions.
+					</asides>
+				</section>
+
+				<section>
+					<img src="img/sinon.png" />
+
+					<aside class="notes">
+						You can also complete with Sinon JS which brings spys, stubs, mocks and everything you need for a really complete test environment.
+					</asides>
+				</section>
+
+				<section>
+					<img src="img/karma.png" height="150" />
+					<br>
+					<ul>
+						<li>Watch your files</li>
+						<li>Run your tests</li>
+						<li>...</li>
+					</ul>
+
+					<aside class="notes">
+						And it's not finished with the test tools. There is also Karma which will watch your files, run your tests...
+					</aside>
+				</section>
+
+				<section>
+					<h3>In every browers!</h3>
+					<img src="img/browsers.png">
+
+					<aside class="notes">
+						...in every browsers you configure.
+					</aside>
+				</section>
+
+				<section>
+					<h3>And produce reports</h3>
+					<ul>
+						<li>In the console</li>
+						<li>In HTML files</li>
+						<li>In JUnit compatible format</li>
+						<li>With coverage!</li>
+					</ul>
+
+					<aside class="notes">
+						It's also capable of producing all kinds of reports and coverage which will be compatible with all the Java tools.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Of course, you can put Karma in the Grunt workflow</h3>
+
+					<aside class="notes">
+						Of course, Grunt, Karma, Mocha are a big sets of tools which can works together.
+					</aside>
+				</section>
+
+				<section>
+					<h3>You can fit your JavaScript project in Jenkins & Sonar</h3>
+					<h2>
+						<img src="img/js.jpg" height="120" style="vertical-align: middle;" />
+						+
+						<img src="img/grunt-logo.png" height="120" style="background-color: white; vertical-align: middle;" />
+						=>
+						<img src="img/jenkins.png" height="120" style="background-color: white; vertical-align: middle;" />
+						&
+						<img src="img/sonar-logo.jpg" height="120" style="vertical-align: middle;" />
+					</h2>
+
+					<aside class="notes">
+						All theses tools I talked about can be orchestrated with Grunt and can produce the rights reports and finally they can fit in the industrial processes of big companies which are often Jenkins fo continuous integration and Sonar for quality reports.
+					</aside>
+				</section>
+
+				<section>
+					<h3>JavaScript projects can finaly fit in Industrial workflows</h3>
+
+					<aside class="notes">
+						You have, build, tests, reports, your JavaScript project can fit in the Industrial workflow.
+					</aside>
+				</section>
+
+				<section>
+					<img src="img/businessman-thumbsup.jpg" />
+
+					<aside class="notes">
+						At this point, your business man should be happy and perhaps not looking at you as a dangerous hipster!
+					</aside>
+				</section>
+
+				<section>
+					<h2>Thank you!</h2>
+					<h2>
+						<a href="https://twitter.com/Swiip" style="color: white;">
+							<img src="img/Twitter_logo_blue.png" style="height: 80px; vertical-align: middle; border: none; box-shadow: none; background-color: transparent;" />
+							<img src="img/swiip.jpg" style="vertical-align: middle;" />
+							@Swiip
+						</a>
+					</h2>
+
+					<aside class="notes">
+						Thank you! Any questions?
+					</aside>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
